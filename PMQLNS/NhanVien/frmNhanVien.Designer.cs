@@ -418,7 +418,7 @@
             // dtgNhanVien
             // 
             this.dtgNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgNhanVien.Location = new System.Drawing.Point(12, 424);
+            this.dtgNhanVien.Location = new System.Drawing.Point(56, 424);
             this.dtgNhanVien.Name = "dtgNhanVien";
             this.dtgNhanVien.Size = new System.Drawing.Size(1340, 313);
             this.dtgNhanVien.TabIndex = 31;

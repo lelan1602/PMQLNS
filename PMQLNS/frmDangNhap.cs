@@ -68,7 +68,7 @@ namespace PMQLNS
                     {
                         MessageBox.Show("Đăng nhập bằng tài khoản mặc định Admin.", "Thông báo");
                         this.Hide();
-                        frmMain frm = new frmMain(); // form quản lý chính
+                        frmKhenThuongVaKyLuat frm = new frmKhenThuongVaKyLuat(); 
                         frm.ShowDialog();
                         this.Close();
                         return;
@@ -80,6 +80,9 @@ namespace PMQLNS
                         return;
                     }
                 }
+
+                
+
 
                 // 3. Nếu có tài khoản trong DB rồi => xử lý như cũ
                 string hashMK = HashPassword(matKhau);

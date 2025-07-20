@@ -81,3 +81,4 @@ E:\TTCN\PMQLNS\PMQLNS\bin\Debug\System.Numerics.Vectors.xml
 E:\TTCN\PMQLNS\PMQLNS\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 E:\TTCN\PMQLNS\PMQLNS\bin\Debug\System.Security.Cryptography.Xml.xml
 E:\TTCN\PMQLNS\PMQLNS\obj\Debug\PMQLNS.csproj.Up2Date
+E:\TTCN\PMQLNS\PMQLNS\obj\Debug\PMQLNS.frmNS.resources

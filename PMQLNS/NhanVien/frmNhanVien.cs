@@ -50,7 +50,7 @@ namespace PMQLNS.NhanVien
                 FROM NhanVien nv
                 LEFT JOIN TaiKhoan tk ON nv.tk_ma = tk.tk_ma
                 Left join ChiTietChucVu ct ON nv.nv_ma = ct.nv_ma
-                Left join ChucVu cv On ct.cv_ma = cv.cv_ma
+                Left join ChucVu cv On ct.cv_ma = cv.cv_ma where nv.pb_ma = 'PB001'
             ";
 
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
@@ -233,7 +233,7 @@ namespace PMQLNS.NhanVien
             string trangthai = cbxTrangThai.SelectedItem?.ToString();
             string quyenhan = cbxQuyenHan.SelectedItem?.ToString();
             string mapb = cbxPhongBan.SelectedValue?.ToString();
-            int chucvu = Convert.ToInt32(cboChucVu.SelectedValue);
+            string chucvu = Convert.ToString(cboChucVu.SelectedValue);
             string trangthaiCV = cbxTrangThaiCV.SelectedItem?.ToString();
             DateTime ngayApDung = dtpNgayApDung.Value;
             DateTime ngayHetHan = dtpNgayHetHan.Value;
@@ -281,6 +281,28 @@ namespace PMQLNS.NhanVien
                     if (countNV > 0)
                     {
                         MessageBox.Show("Mã nhân viên đã tồn tại. Vui lòng nhập mã khác!");
+                        return;
+                    }
+
+                    // Kiểm tra email đã tồn tại chưa
+                    string checkEmail = "SELECT COUNT(*) FROM NhanVien WHERE nv_email = @email";
+                    SqlCommand cmdCheckEmail = new SqlCommand(checkEmail, conn);
+                    cmdCheckEmail.Parameters.AddWithValue("@email", email);
+                    int countEmail = (int)cmdCheckEmail.ExecuteScalar();
+                    if (countEmail > 0)
+                    {
+                        MessageBox.Show("Email đã tồn tại. Vui lòng nhập email khác!");
+                        return;
+                    }
+
+                    // Kiểm tra số điện thoại đã tồn tại chưa
+                    string checkSDT = "SELECT COUNT(*) FROM NhanVien WHERE nv_sdt = @sdt";
+                    SqlCommand cmdCheckSDT = new SqlCommand(checkSDT, conn);
+                    cmdCheckSDT.Parameters.AddWithValue("@sdt", sdt);
+                    int countSDT = (int)cmdCheckSDT.ExecuteScalar();
+                    if (countSDT > 0)
+                    {
+                        MessageBox.Show("Số điện thoại đã tồn tại. Vui lòng nhập số khác!");
                         return;
                     }
 

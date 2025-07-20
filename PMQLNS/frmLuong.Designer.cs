@@ -39,7 +39,7 @@
             this.dtgBangLuong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgBangLuong.Location = new System.Drawing.Point(27, 149);
             this.dtgBangLuong.Name = "dtgBangLuong";
-            this.dtgBangLuong.Size = new System.Drawing.Size(1319, 554);
+            this.dtgBangLuong.Size = new System.Drawing.Size(1319, 511);
             this.dtgBangLuong.TabIndex = 0;
             // 
             // btnTraLuong

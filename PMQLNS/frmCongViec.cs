@@ -128,7 +128,7 @@ namespace PMQLNS
             if (dtgCongViec.CurrentRow != null)
             {
                 // Lấy mã công việc từ dòng đang chọn
-                int maCongViec = Convert.ToInt32(dtgCongViec.CurrentRow.Cells["cviec_ma"].Value);
+                string maCongViec = Convert.ToString(dtgCongViec.CurrentRow.Cells["cviec_ma"].Value);
 
                 string query = "UPDATE congviec SET " +
                                "nv_ma = @nv_ma, " +
@@ -177,7 +177,7 @@ namespace PMQLNS
 
                 if (result == DialogResult.Yes)
                 {
-                    int maCongViec = Convert.ToInt32(dtgCongViec.CurrentRow.Cells["cviec_ma"].Value);
+                    string maCongViec = Convert.ToString(dtgCongViec.CurrentRow.Cells["cviec_ma"].Value);
 
                     string query = "DELETE FROM congviec WHERE cviec_ma = @macv";
 
